@@ -15,6 +15,7 @@
   <img alt="Repo stars" src="https://img.shields.io/github/stars/oslabs-beta/vno?logoColor=%2334495e&style=social"> 
 </p>
 
+
 ## Features
 
 - Parser
@@ -33,35 +34,34 @@
 - OR you can use the vno build method to compile an existing vue file structure into a deno-legible .js file
 
 ### vno installation
-
 - run the following command in your terminal to install vno on your machine.
+> you need deno 1.7 or above
 
 ```
 deno install --allow-net --unstable https://deno.land/x/vno/install/vno.ts
 ```
 
-- Deno requires the `--allow-net` permissions to run an installation
-- This feature, and many of the others used in vno are still considered "unstable" for Deno. Run the command with `--unstable` to allow these resources to execute.
-- The force flag `-f` is only necessary when you want to overwrite an existing copy of the module
-- name the module in your path with the name flag `-n` or `--name` , we suggest using 'vno'
+- Deno requires the ```--allow-net``` permissions to run an installation
+- This feature, and many of the others used in vno are still considered "unstable" for Deno. Run the command with ```--unstable``` to allow these resources to execute.
+- The force flag  ```-f```  is only necessary when you want to overwrite an existing copy of the module
+- name the module in your path with the name flag  ```-n``` or ``--name`` , we suggest using 'vno'
 - If you have not already added Deno bin into your path, you will need to do so.
-
-  - Copy the export path your terminal returns and paste it into your terminal
+	- Copy the export path your terminal returns and paste it into your terminal
 
   ![install gif](https://media.giphy.com/media/LVokebNuReGJuwU13R/giphy.gif)
 
-### a quick word about permissions
 
+### a quick word about permissions
 - Deno is secure by default, this means that explicit permissions are required for certain tasks.
 - You can avoid responding to the permissions requests by flagging the installation script.
-- Most of our module requires both read and write permissions `--allow-read` & `--allow-write`
+- Most of our module requires read and write permissions ```--allow-read``` & ```--allow-write```
 - If you decide not to flag permissions at installation, you will be prompted in the terminal after executing a command.
 - **note: If you would like to avoid writing out the permissions altogether, you can also use the '-A' tag**
 
 ### create a new project
 
 - create a directory for your project
-- CD into the aforementioned directory
+- CD into the aforementioned directory 
 
 ```
 vno create [project name]
@@ -74,6 +74,7 @@ vno create [project name]
 ```
 deno run --allow-read --allow-write --allow-net --unstable https://deno.land/x/vno/install/vno.ts create [project name]
 ```
+
 
 ### run a build on a project
 
@@ -120,15 +121,12 @@ deno run --allow-read --allow-write --allow-net --unstable https://deno.land/x/v
   "entry": "./path/to/rootcomponent",
   "options": {
     "title": "an example application"
-    "port": 4040
   },
   "server": "./path/to/server.ts"
 }
 ```
-
 - And execute this command in the terminal
 - vno run server creates a subprocess, which will request run permissions
-
 ```
 vno run server
 ```
